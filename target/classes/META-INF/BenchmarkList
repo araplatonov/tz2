@@ -1,3 +1,0 @@
-JMH S 15 benchmarks.Main S 50 benchmarks.jmh_generated.Main_testSumArray_jmhTest S 12 testSumArray S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
-JMH S 16 org.example.Main S 53 org.example.jmh_generated.Main_wellHelloThere_jmhTest S 14 wellHelloThere S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
-JMH S 28 org.example.MyFirstBenchmark S 63 org.example.jmh_generated.MyFirstBenchmark_testSumArray_jmhTest S 12 testSumArray S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
