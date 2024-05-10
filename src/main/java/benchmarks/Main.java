@@ -9,6 +9,7 @@ import org.openjdk.jmh.results.RunResult;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.openjdk.jmh.runner.options.TimeValue;
 
 import java.util.Collection;
 
@@ -41,6 +42,8 @@ public class Main {
     public static void main(String[] args) {
         Options opt = new OptionsBuilder()
                 .include(org.example.Main.class.getSimpleName())
+                .warmupTime(TimeValue.seconds(1))
+                .measurementTime(TimeValue.seconds(1))
                 .forks(1)
                 .build();
 
