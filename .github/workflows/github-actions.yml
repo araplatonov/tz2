@@ -18,6 +18,4 @@ jobs:
       - name: Build
         run: mvn --batch-mode -DskipTests package
       - name: Test
-        run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
-        with:
-          fail-on-error: true
+        run: mvn --batch-mode test
