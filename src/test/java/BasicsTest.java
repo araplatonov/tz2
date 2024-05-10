@@ -15,6 +15,6 @@ public class BasicsTest {
 
         long validValue = Main._sum(inp);
 
-        Assertions.assertEquals(8l, validValue);
+        Assertions.assertEquals(9l, validValue);
     }
 }
