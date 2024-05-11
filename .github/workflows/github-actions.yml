@@ -19,3 +19,31 @@ jobs:
         run: mvn --batch-mode -DskipTests package
       - name: Test
         run: mvn --batch-mode test
+      - name: Notify Telegram on failure
+        if: failure()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            Build Failed
+            *Repository*: ${{ github.repository }}
+            *Actor*: ${{ github.actor }}
+            *Commit*: ${{ github.sha }}
+            *Message*: ${{ github.event.head_commit.message }}
+            [View Workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+      - name: Notify Telegram on success
+        if: success()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            ВСЕ ОК
+            *Repository*: ${{ github.repository }}
+            *Actor*: ${{ github.actor }}
+            *Commit*: ${{ github.sha }}
+            *Message*: ${{ github.event.head_commit.message }}
+            [View Workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
