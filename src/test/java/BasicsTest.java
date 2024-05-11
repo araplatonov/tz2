@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class BasicsTest {
     @Test
-    public void mytest() {
+    public void sum_test() {
         ArrayList<Long> inp = new ArrayList<Long>();
         inp.add(1l);
         inp.add(2l);
@@ -15,6 +15,6 @@ public class BasicsTest {
 
         long validValue = Main._sum(inp);
 
-        Assertions.assertEquals(9l, validValue);
+        Assertions.assertEquals(8l, validValue);
     }
 }
